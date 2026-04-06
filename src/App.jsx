@@ -19,6 +19,7 @@ import AdminDashboard from './pages/admin/AdminDashboard';
 import AdminProducts from './pages/admin/AdminProducts';
 import AdminOrders from './pages/admin/AdminOrders';
 import AdminUsers from './pages/admin/AdminUsers';
+import OrderDetailPage from './pages/OrderDetailPage';
 
 // ── Route Guards ─────────────────────────────────────────
 
@@ -64,6 +65,9 @@ const App = () => (
             {/* Private Routes */}
             <Route path="/profile" element={
               <PrivateRoute><ProfilePage /></PrivateRoute>
+            } />
+            <Route path="/orders" element={
+              <PrivateRoute><OrdersPage /></PrivateRoute>
             } />
             <Route path="/orders" element={
               <PrivateRoute><OrdersPage /></PrivateRoute>

@@ -88,11 +88,12 @@ const OrdersPage = () => {
                   <span>via {order.paymentMethod}</span>
                 </div>
                 <Link
-                  to={`/orders/${order._id}`}
-                  className="text-blue-600 hover:text-blue-700 text-sm font-medium"
-                >
-                  View Details →
-                </Link>
+  to={`/orders/${order._id}`}
+  className="text-blue-600 hover:text-blue-700 text-sm font-medium
+    hover:underline transition-colors"
+>
+  View Details →
+</Link>
               </div>
             </div>
           ))}
