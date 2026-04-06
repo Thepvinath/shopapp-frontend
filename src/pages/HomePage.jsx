@@ -39,11 +39,11 @@ const HomePage = () => {
 
   return (
     <div className="min-h-screen">
-      {/* ── Hero Section (เปลี่ยนเป็นแบบใส่รูปภาพ) ─────────────────────────────── */}
+      {/* ── Hero Section ─────────────────────────────────────────────── */}
       <section
         className="text-white relative"
         style={{
-          backgroundImage: 'url(https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=1600&q=80)',
+          backgroundImage: 'url(https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?w=1600&q=80)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}
@@ -168,15 +168,32 @@ const HomePage = () => {
       </section>
 
       {/* ── Banner ───────────────────────────────────── */}
-      <section className="bg-blue-600 text-white mx-4 sm:mx-8 mb-14 rounded-3xl overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 py-14 text-center">
-          <h2 className="text-3xl font-bold mb-3">Free Shipping on Orders Over $100</h2>
-          <p className="text-blue-100 mb-8">
-            Use code <span className="font-bold text-white px-2 py-1 bg-blue-500 rounded">FREESHIP</span> at checkout
+      <section
+        className="relative text-white overflow-hidden"
+        style={{
+          backgroundImage: 'url(https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?w=1600&q=80)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+      >
+        {/* Dark overlay ทับรูป */}
+        <div className="absolute inset-0 bg-blue-900/70" />
+
+        {/* Content */}
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
+          <h2 className="text-3xl font-bold mb-3">
+            Free Shipping on Orders Over $100
+          </h2>
+          <p className="text-blue-100 mb-6">
+            Use code{' '}
+            <span className="font-bold text-white bg-white/20 px-2 py-0.5 rounded">
+              FREESHIP
+            </span>{' '}
+            at checkout
           </p>
           <Link
             to="/products"
-            className="bg-white text-blue-700 hover:bg-blue-50 font-semibold px-8 py-3 rounded-xl transition-all shadow-lg inline-block"
+            className="bg-white text-blue-700 hover:bg-blue-50 font-semibold px-8 py-3 rounded-xl transition-colors inline-block"
           >
             Start Shopping
           </Link>
