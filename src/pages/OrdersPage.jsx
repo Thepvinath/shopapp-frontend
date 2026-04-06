@@ -6,7 +6,7 @@ import Spinner from '../components/ui/Spinner';
 import { formatPrice, formatDate, statusColor } from '../utils/helpers';
 
 const OrdersPage = () => {
-  const [orders,  setOrders]  = useState([]);
+  const [orders, setOrders] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -33,7 +33,6 @@ const OrdersPage = () => {
         <div className="space-y-4">
           {orders.map((order) => (
             <div key={order._id} className="card p-5">
-
               {/* Order Header */}
               <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
                 <div>
@@ -57,8 +56,10 @@ const OrdersPage = () => {
               {/* Order Items */}
               <div className="flex gap-2 overflow-x-auto pb-1">
                 {order.orderItems.map((item) => (
-                  <div key={item._id} className="shrink-0 flex items-center gap-2
-                    bg-gray-50 rounded-lg p-2 min-w-[180px]">
+                  <div
+                    key={item._id}
+                    className="shrink-0 flex items-center gap-2 bg-gray-50 rounded-lg p-2 min-w-[180px]"
+                  >
                     <img
                       src={item.image || 'https://placehold.co/50x50?text=?'}
                       alt={item.name}
@@ -77,23 +78,20 @@ const OrdersPage = () => {
               </div>
 
               {/* Footer */}
-              <div className="flex items-center justify-between mt-4 pt-3
-                border-t border-gray-100">
+              <div className="flex items-center justify-between mt-4 pt-3 border-t border-gray-100">
                 <div className="flex gap-3 text-xs text-gray-500">
-                  <span>{order.isPaid
-                    ? '✅ Paid'
-                    : '⏳ Payment pending'}
+                  <span>
+                    {order.isPaid ? '✅ Paid' : '⏳ Payment pending'}
                   </span>
                   <span>•</span>
                   <span>via {order.paymentMethod}</span>
                 </div>
                 <Link
-  to={`/orders/${order._id}`}
-  className="text-blue-600 hover:text-blue-700 text-sm font-medium
-    hover:underline transition-colors"
->
-  View Details →
-</Link>
+                  to={`/orders/${order._id}`}
+                  className="text-blue-600 hover:text-blue-700 text-sm font-medium hover:underline transition-colors"
+                >
+                  View Details →
+                </Link>
               </div>
             </div>
           ))}

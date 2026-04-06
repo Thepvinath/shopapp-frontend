@@ -33,18 +33,17 @@ const StatusTimeline = ({ status }) => {
             }}
           />
           {STEPS.map((step, i) => {
-            const isDone    = i < currentIndex;
+            const isDone = i < currentIndex;
             const isCurrent = i === currentIndex;
             return (
               <div key={step} className="flex flex-col items-center z-10 flex-1">
-                <div className={`w-10 h-10 rounded-full flex items-center
-                  justify-center text-sm font-bold transition-all ${
-                    isDone
-                      ? 'bg-green-500 text-white'
-                      : isCurrent
-                      ? 'bg-blue-600 text-white ring-4 ring-blue-100'
-                      : 'bg-white border-2 border-gray-300 text-gray-400'
-                  }`}>
+                <div className={`w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold transition-all ${
+                  isDone
+                    ? 'bg-green-500 text-white'
+                    : isCurrent
+                    ? 'bg-blue-600 text-white ring-4 ring-blue-100'
+                    : 'bg-white border-2 border-gray-300 text-gray-400'
+                }`}>
                   {isDone ? (
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
@@ -72,9 +71,9 @@ const StatusTimeline = ({ status }) => {
 
 const OrderDetailPage = () => {
   const { id } = useParams();
-  const [order,   setOrder]   = useState(null);
+  const [order, setOrder] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [error,   setError]   = useState('');
+  const [error, setError] = useState('');
 
   useEffect(() => {
     getOrderById(id)
@@ -101,7 +100,6 @@ const OrderDetailPage = () => {
 
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-
       {/* Header */}
       <div className="flex flex-wrap items-center justify-between gap-3 mb-6">
         <div>
@@ -127,10 +125,8 @@ const OrderDetailPage = () => {
       <StatusTimeline status={order.status} />
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
-
         {/* Left Column */}
         <div className="lg:col-span-2 space-y-5">
-
           {/* Order Items */}
           <div className="card p-5">
             <h2 className="font-bold text-gray-900 mb-4 flex items-center gap-2">

@@ -69,8 +69,8 @@ const App = () => (
             <Route path="/orders" element={
               <PrivateRoute><OrdersPage /></PrivateRoute>
             } />
-            <Route path="/orders" element={
-              <PrivateRoute><OrdersPage /></PrivateRoute>
+            <Route path="/orders/:id" element={
+              <PrivateRoute><OrderDetailPage /></PrivateRoute>
             } />
 
             {/* Route Checkout  */}
